@@ -1,16 +1,14 @@
-- name: testing variable presedence
+- name: testing variable precedence
   hosts: mongodb
-  vars: 
-    NAME: RAHUL-play
-  vars-files:
-  - variables.yaml
-  vars_prompt:
-  - name: NAME
-    prompt: Please enter your username
-    private: false
+  # vars: 
+  #   NAME: RAHUL-play
+  # vars-files:
+  # - variables.yaml
+  # vars_prompt:
+  # - name: NAME
+  #   prompt: Please enter your username
+  #   private: false
   tasks:
   - name: variable at task level
-    vars:
-      NAME: RAHUL-task
-    ansible.builtin.debug:
-      msg: "Name is {{NAME}}"
+    ansible.builtin.debug: 
+      msg: "Name is :{{NAME}}"
