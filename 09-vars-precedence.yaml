@@ -1,7 +1,7 @@
 - name: testing variable presedence
   hosts: mongodb
   vars: 
-    NAME: RAHUL
+    NAME: RAHUL-play
   vars-files:
   - variables.yaml
   vars_prompt:
@@ -11,6 +11,6 @@
   tasks:
   - name: variable at task level
     vars:
-      NAME: RAHUL-123
+      NAME: RAHUL-task
     ansible.builtin.debug:
       msg: "Name is {{NAME}}"
