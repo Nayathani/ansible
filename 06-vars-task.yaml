@@ -1,0 +1,16 @@
+- name: variables at task level
+  hosts: mongodb
+  vars:
+  - name: Rahul
+    DOB: 12-11-19
+  tasks:
+  - name: inherit values from play
+    ansible.builtin.debug:
+      msg: "Hello my name is {{name}} and born on {{DOB}}" 
+  - name: inherit values from play and add to override
+    vars:
+    - name: Rahul
+      place: Warangal
+    ansible.builtin.debug:
+      msg: "Hello my name is {{name}} and born on {{DOB}}, place is {{place}}"
+
