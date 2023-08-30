@@ -1,0 +1,16 @@
+- name: testing variable presedence
+  hosts: mongodb
+  vars: 
+    NAME: RAHUL
+  vars-files:
+  - variables.yaml
+  vars_prompt:
+  - name: NAME
+    prompt: Please enter your username
+    private: false
+  tasks:
+  - name: variable at task level
+    vars:
+      NAME: RAHUL-123
+    ansible.builtin.debug:
+      msg: "Name is {{NAME}}"
