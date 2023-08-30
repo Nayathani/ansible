@@ -1,6 +1,12 @@
 - name: variables in ansible
   hosts: mongodb
+  vars:
+    name: RAHUL
+    Dob: 02-02-02
   tasks:
   - name: print hello world
     ansible.builtin.debug:
       msg: "Hello, I am learning ansible"
+  - name: print variables
+    ansible.builtin.debug:
+      msg: "Hi I am {{name}} and my {{Dob}} is this" 
