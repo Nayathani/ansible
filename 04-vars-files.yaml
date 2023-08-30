@@ -1,0 +1,8 @@
+- name: Variables from files
+  hosts: mongodb
+  vars:
+  - varaibles.yaml
+  tasks:
+  - name: printing variables
+    ansible.builtin.debug:
+      msg: "Hi I am {{NAME}}, Date of birth is {{DOB}}, born in {{BORN}}"
