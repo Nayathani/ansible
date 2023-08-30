@@ -9,7 +9,7 @@
       msg: "Hello my name is {{name}} and born on {{DOB}}" 
   - name: inherit values from play and add to override
     vars:
-    - name: Rahul
+    - name: Vikas
       place: Warangal
     ansible.builtin.debug:
       msg: "Hello my name is {{name}} and born on {{DOB}}, place is {{place}}"
